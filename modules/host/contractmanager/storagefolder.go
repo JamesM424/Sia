@@ -399,7 +399,7 @@ func (cm *ContractManager) StorageFolders() []modules.StorageFolderMetadata {
 	defer cm.wal.mu.Unlock()
 
 	// Iterate over the storage folders that are in memory first, and then
-	// suppliment them with the storage folders that are not in memory.
+	// supplement them with the storage folders that are not in memory.
 	var smfs []modules.StorageFolderMetadata
 	for _, sf := range cm.storageFolders {
 		// Grab the non-computational data.
