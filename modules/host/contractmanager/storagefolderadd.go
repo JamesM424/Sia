@@ -33,7 +33,7 @@ func findUnfinishedStorageFolderAdditions(scs []stateChange) []savedStorageFolde
 		}
 	}
 
-	// Return the active unifinished storage folders as a slice.
+	// Return the active unfinished storage folders as a slice.
 	var sfs []savedStorageFolder
 	for _, sf := range usfMap {
 		sfs = append(sfs, sf)
