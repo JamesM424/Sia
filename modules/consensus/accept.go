@@ -225,7 +225,7 @@ func (cs *ConsensusSet) managedAcceptBlocks(blocks []types.Block) (blockchainExt
 
 	// Make sure that blocks are consecutive. Though this isn't a strict
 	// requirement, if blocks are not consecutive then it becomes a lot harder
-	// to maintain correcetness when adding multiple blocks in a single tx.
+	// to maintain correctness when adding multiple blocks in a single tx.
 	//
 	// This is the first time that IDs on the blocks have been computed.
 	blockIDs := make([]types.BlockID, 0, len(blocks))
@@ -258,7 +258,7 @@ func (cs *ConsensusSet) managedAcceptBlocks(blocks []types.Block) (blockchainExt
 				return err
 			}
 
-			// Try adding the block to consnesus.
+			// Try adding the block to consensus.
 			changeEntry, err := cs.addBlockToTree(tx, blocks[i], parent)
 			if err == nil {
 				changes = append(changes, changeEntry)
