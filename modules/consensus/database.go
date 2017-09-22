@@ -88,13 +88,13 @@ func (cs *ConsensusSet) openDB(filename string) (err error) {
 func (cs *ConsensusSet) initDB(tx *bolt.Tx) error {
 	// If the database has already been initialized, there is nothing to do.
 	// Initialization can be detected by looking for the presence of the siafund
-	// pool bucket. (legacy design chioce - ultimately probably not the best way
-	// ot tell).
+	// pool bucket. (legacy design choice - ultimately probably not the best way
+	// to tell).
 	if tx.Bucket(SiafundPool) != nil {
 		return nil
 	}
 
-	// Create the compononents of the database.
+	// Create the components of the database.
 	err := cs.createConsensusDB(tx)
 	if err != nil {
 		return err
